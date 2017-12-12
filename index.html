@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Power of SVG</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta property="og:url" content="https://korosteleva.github.io/svg-eng/" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Power of SVG" />
+	<meta property="og:description" content="Some demos about SVG power in every day usage" />
+	<meta property="og:image" content="https://korosteleva.github.io/images/avatar.jpg" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="./assets/styles/screen-16x10.css">
+
+	<style>
+		.demo-link {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: center;
+		}
+		.demo-link .link {
+			font-size: 5em;
+			background: none;
+			width: 100%;
+			text-align: center;
+		}
+
+		.cover-slide h2 {
+			text-align:center;
+			font-size:70px;
+		}
+		.cover-slide p {
+			text-align:center;
+		}
+		.cover-images {
+			display: flex;
+			justify-content: space-around;
+			position: absolute;
+			bottom: 10%;
+			left: 0;
+			right: 0;
+			width: 100%;
+		}
+		.cover-image {
+			width: 150px;
+			height: 100px;
+		}
+	</style>
+</head>
+<body class="shower list">
+
+	<header class="caption">
+		<h1>Power of SVG</h1>
+		<p>Tatiana Korosteleva, Booking.com</p>
+	</header>
+
+	<section class="slide cover-slide">
+		<h2>Power of SVG</h2>
+		<p>Booking.com</p>
+		<div class="cover-images">
+			<svg class="cover-image">
+				<use xlink:href="./assets/index.svg#candy" />
+			</svg>
+			<svg class="cover-image">
+				<use xlink:href="./assets/index.svg#carrot" />
+			</svg>
+			<svg class="cover-image">
+				<use xlink:href="./assets/index.svg#grape" />
+			</svg>
+			<svg class="cover-image">
+				<use xlink:href="./assets/index.svg#candy2" />
+			</svg>
+			<svg class="cover-image">
+				<use xlink:href="./assets/index.svg#icecream" />
+			</svg>
+			<svg class="cover-image">
+				<use xlink:href="./assets/index.svg#martini" />
+			</svg>
+		</div>
+	</section>
+
+	<section class="slide">
+		<iframe src="https://korosteleva.github.io/svg-demo/index.html" scrolling="no" width="100%" height="80%"></iframe>
+	</section>
+
+	<section class="slide">
+		<h2 style="text-align: center;">Why SVGs are awesome</h2>
+
+		<div class="cover-images">
+			<svg class="cover-image">
+				<use xlink:href="./assets/common.svg#happy" />
+			</svg>
+			<svg class="cover-image">
+				<use xlink:href="./assets/common.svg#surprise" />
+			</svg>
+		</div>
+	</section>
+
+	<section class="slide">
+		<h2>Handwritten code</h2>
+		<p>You can create SVG in every editor</p>
+		<pre>
+				<code>&lt;svg&gt;</code>
+				<code>    &lt;line ... /&gt;</code>
+				<code>&lt;/svg&gt;</code>
+			</pre>
+	</section>
+
+	<section class="slide">
+		<h2>SVGs are scalable</h2>
+		<div class="svg-retina">
+			<svg width="150" height="250">
+				<use xlink:href="./assets/common.svg#cheese" />
+			</svg>
+			<svg width="300" height="350">
+				<use xlink:href="./assets/common.svg#cheese" />
+			</svg>
+			<svg width="400" height="400">
+				<use xlink:href="./assets/common.svg#cheese" />
+			</svg>
+		</div>
+
+		<style>
+			.svg-retina {
+				display: flex;
+				align-items: flex-start;
+			}
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2>Accessibility</h2>
+		<div class="svg-accessibility">
+			<pre>
+				<code>&lt;svg <mark>aria-labelledby="imgTitle imgDesc" role="img"</mark> &gt;</code>
+				<code>    &lt;title <mark>id="imgTitle"</mark> &gt;Tea cup&lt;/title&gt;</code>
+				<code>    &lt;desc <mark>id="imgDesc"</mark> &gt;</code>
+				<code>        It is hot tea cup</code>
+				<code>    &lt;/desc&gt;</code>
+				<code>    ...</code>
+				<code>&lt;/svg&gt;</code>
+			</pre>
+
+			<svg class="place bottom right" width="400" height="280" style="bottom: 10%;">
+				<use xlink:href="./assets/common.svg#tea" />
+			</svg>
+		</div>
+	</section>
+
+	<section class="slide svg-accessibility-text">
+		<h2>Accessibility</h2>
+		<p>You can search, copy, select SVG's text</p>
+		<svg>
+			<linearGradient id="linear-gradient">
+				<stop offset="0%" stop-color="crimson"/>
+				<stop offset="100%" stop-color="gold"/>
+			</linearGradient>
+
+			<text x="50%" y="60%" text-anchor="middle" class="text" fill="url(#linear-gradient)">SVG</text>
+		</svg>
+
+		<style>
+			.svg-accessibility-text svg {
+				width: 100%;
+				height: 14em;
+
+			}
+			.svg-accessibility-text svg .text {
+				font-family: Helvetica;
+				font-size: 10em;
+			}
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2>Accessibility</h2>
+		<div class="demo-link">
+			<a class="link" href="https://korosteleva.github.io/svg-demo/text-path/text-path.html" target="_blank">DEMO</a>
+		</div>
+	</section>
+
+	<section class="slide">
+		<h2>CSS/JS in SVG</h2>
+        <pre>
+			<code>&lt;svg...&gt;</code>
+			<code>	&lt;style&gt;</code>
+			<code class="mark">		@import url(../common/index.css);</code>
+			<code class="mark">		@import url(page.css);</code>
+			<code>	&lt;/style&gt;</code>
+			<code>	...</code>
+			<code>&lt;/svg&gt;</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>SVGs are responsive</h2>
+		<div class="demo-link">
+			<a class="link" href="https://korosteleva.github.io/svg-demo/responsive/responsive.html" target="_blank">DEMO</a>
+		</div>
+	</section>
+	<section class="slide">
+		<h2>SVGs are responsive</h2>
+		<pre>
+			<code>.hidden-sm, .hidden-md { transition: all 1s }</code>
+			<code class="mark">@media (max-width: 380px) {</code>
+			<code>	.hidden-sm { opacity: 1 }</code>
+			<code>	.hidden-md { opacity: 0 }</code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Good support</h2>
+		<img style="width: 770px;" src="./assets/images/caniuse.png" >
+	</section>
+
+	<section class="slide">
+		<h2 style="text-align: center;">SVG vs Icon Fonts</h2>
+
+		<div class="cover-images">
+			<svg class="cover-image">
+				<use xlink:href="./assets/common.svg#happy" />
+			</svg>
+			<svg class="cover-image">
+				<use xlink:href="./assets/common.svg#surprise" />
+			</svg>
+		</div>
+	</section>
+
+	<section class="slide">
+		<h2>SVG vs Icon Fonts</h2>
+		<ul>
+			<li>Common problems with font support;</li>
+			<li>Different browser &mdash; different render;</li>
+			<li>Usage of <code>::before</code> and <code>::after</code> pseudo elements;</li>
+			<li>Difficult stylization &mdash; only color, shadow, size;</li>
+			<li>No multicolor ability;</li>
+			<li>Problems in case on fail font loading, during the font and css loading.</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>SVG vs Icon Fonts</h2>
+		<div class="demo-link" style="height: 40vh">
+			<a href="https://www.youtube.com/watch?v=9xXBYcWgCHA" target="_blank" rel="noopener">Seren Davies: Death to icon fonts - EpicFEL 2015</a>
+		</div>
+	</section>
+
+	<section class="slide">
+		<h2>SVG vs JPG/PNG</h2>
+		<ul>
+			<li>JPG/PNG are impossible to stylize;</li>
+			<li>For modern screens you need to make @2x, @3x sizes;</li>
+			<li>Often you have to choose between good view and big size.</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2 style="display: none;">SVG vs JPG/PNG</h2>
+		<img src="./assets/images/svg-vs-png.png" class="place center center" style="width: 500px;">
+	</section>
+
+	<section class="slide">
+		<h2 style="text-align: center;">How to use SVG?</h2>
+
+		<div class="cover-images">
+			<svg class="cover-image">
+				<use xlink:href="./assets/common.svg#happy" />
+			</svg>
+			<svg class="cover-image">
+				<use xlink:href="./assets/common.svg#surprise" />
+			</svg>
+		</div>
+	</section>
+
+	<section class="slide">
+		<h2>How to use SVG?</h2>
+		<p>Image</p>
+		<pre>
+			<code>&lt;div&gt;</code>
+			<code class="mark">	&lt;img src="apple.svg" alt="Apple" /&gt;</code>
+			<code>&lt;/div&gt;</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>How to use SVG?</h2>
+		<p>Inline svg</p>
+		<pre>
+			<code>&lt;div&gt;</code>
+			<code class="mark">	&lt;svg ... &gt;</code>
+			<code class="mark">		&lt;line .... /&gt;</code>
+			<code class="mark">	&lt;/svg&gt;</code>
+			<code>&lt;/div&gt;</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>How to use SVG?</h2>
+		<p>Embed, object, iframe</p>
+		<pre>
+			<code>&lt;div&gt;</code>
+			<code class="mark">	&lt;iframe src="apple.svg" ... &gt; &lt;/iframe&gt;</code>
+			<code>&lt;/div&gt;</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>How to use SVG?</h2>
+		<p>SVG sprites</p>
+		<pre>
+			<code>&lt;svg&gt;</code>
+			<code>	&lt;defs&gt;</code>
+			<code>		&lt;symbol <mark>id="pinapple"</mark>&gt;&lt;line .../&gt;&lt;/symbol&gt;</code>
+			<code>		&lt;symbol <mark>id="grape"</mark>&gt;&lt;line .../&gt;&lt;/symbol&gt;</code>
+			<code>		&lt;symbol <mark>id="orange"</mark>&gt;&lt;line .../&gt;&lt;/symbol&gt;</code>
+			<code>	&lt;/defs&gt;</code>
+			<code>&lt;/svg&gt;</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>How to use SVG?</h2>
+		<p>SVG sprites</p>
+		<pre>
+			<code>&lt;div&gt;</code>
+			<code>	&lt;svg&gt;</code>
+			<code>		&lt;use <mark>xlink:href="fruits.svg#pinapple"</mark> /&gt;</code>
+			<code>	&lt;/svg&gt;</code>
+			<code>&lt;/div&gt;</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>How to use SVG?</h2>
+		<p>In CSS as <code>background-image</code></p>
+		<p><code>data:image/svg+xml</code>, <code>data-url</code></p>
+		<pre>
+			<code>.element {</code>
+			<code class="mark">	background: url(apple.svg);</code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Optimize your SVG</h2>
+		<p>You can save up to 90%</p>
+		<div class="demo-link" style="height: 25vh">
+			<a href="https://jakearchibald.github.io/svgomg/" target="_blank" rel="noopener">SVGOMG</a>
+		</div>
+	</section>
+
+	<section class="slide">
+		<h2>SVG primitives</h2>
+		<div class="demo-link">
+			<a class="link" href="https://korosteleva.github.io/svg-demo/primitives/primitives.html" target="_blank">DEMO</a>
+		</div>
+	</section>
+
+	<section class="slide">
+		<h2>SVG primitives &mdash; lines</h2>
+
+		<div class="demo-link">
+			<a class="link" href="https://korosteleva.github.io/svg-demo/primitives/stroke-linescape.html" target="_blank">DEMO</a>
+		</div>
+	</section>
+
+	<section class="slide">
+		<h2>SVG primitives &mdash; dashing</h2>
+
+		<div class="demo-link">
+			<a class="link" href="https://korosteleva.github.io/svg-demo/primitives/dashing.html" target="_blank">DEMO</a>
+		</div>
+	</section>
+
+	<section class="slide">
+		<h2>SVG primitives &mdash; corners</h2>
+
+		<div class="demo-link">
+			<a class="link" href="https://korosteleva.github.io/svg-demo/primitives/corners.html" target="_blank">DEMO</a>
+		</div>
+	</section>
+
+	<section class="slide">
+		<h2>SVG gradients</h2>
+		<div class="demo-link">
+			<a class="link" href="https://korosteleva.github.io/svg-demo/gradient/gradient.html" target="_blank">DEMO</a>
+		</div>
+	</section>
+
+	<section class="slide">
+		<h2>SVG Clip-path</h2>
+
+		<img class="clip-svg" src="./assets/images/strawberry-img.jpg" alt="Strawberry">
+		<svg width="0" height="0">
+			<style>
+				.clip-svg {
+					clip-path: url(#myClip);
+				}
+			</style>
+			<defs>
+				<clipPath id="myClip">
+					<path fill="#FFFFFF" stroke="#000000" stroke-width="1.5794" stroke-miterlimit="10" d="M215,100.3c97.8-32.6,90.5-71.9,336-77.6
+        c92.4-2.1,98.1,81.6,121.8,116.4c101.7,149.9,53.5,155.9,14.7,178c-96.4,54.9,5.4,269-257,115.1c-57-33.5-203,46.3-263.7,20.1
+        c-33.5-14.5-132.5-45.5-95-111.1C125.9,246.6,98.6,139.1,215,100.3z"></path>
+				</clipPath>
+			</defs>
+		</svg>
+	</section>
+
+	<section class="slide">
+		<h2>SVG masks</h2>
+		<p data-height="400" data-theme-id="0" data-slug-hash="BjRVew" data-default-tab="result" data-user="yoksel" data-embed-version="2" data-pen-title="Flashlight" class="codepen">See the Pen <a href="http://codepen.io/yoksel/pen/BjRVew/">Flashlight</a> by yoksel (<a href="http://codepen.io/yoksel">@yoksel</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+		<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+	</section>
+
+	<section class="slide">
+		<h2>SVG filters</h2>
+		<p data-height="271" data-theme-id="0" data-slug-hash="ArFvk" data-default-tab="result" data-user="DirkWeber" data-embed-version="2" data-pen-title="SVG Glitch" class="codepen">See the Pen <a href="http://codepen.io/DirkWeber/pen/ArFvk/">SVG Glitch</a> by Dirk Weber (<a href="http://codepen.io/DirkWeber">@DirkWeber</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+	</section>
+
+	<section class="slide">
+		<h2>currentColor</h2>
+		<div class="demo-link">
+			<a class="link" href="https://korosteleva.github.io/svg-demo/current-color/current-color.html" target="_blank">DEMO</a>
+		</div>
+	</section>
+
+	<section class="slide">
+		<h2>CSS variables</h2>
+		<div class="demo-link">
+			<a class="link" href="https://korosteleva.github.io/svg-demo/css-vars/css-vars.html" target="_blank">DEMO</a>
+			<div>Designed by <a href="http://lea.verou.me/" target="_blank" rel="noopener">Lea Verou</a></div>
+		</div>
+	</section>
+
+	<section class="slide">
+		<h2>Loaders</h2>
+		<div class="demo-link">
+			<a class="link" href="https://korosteleva.github.io/svg-demo/loaders/loaders.html" target="_blank">DEMO</a>
+			<div>Designed by <a href="http://samherbert.net/" target="_blank" rel="noopener">Sam Herbert</a></div>
+		</div>
+	</section>
+
+	<section class="slide">
+		<p data-height="405" data-theme-id="0" data-slug-hash="KwJmjj" data-default-tab="result" data-user="marknelson" data-embed-version="2" data-pen-title="SVG Sprite Animation" class="codepen">See the Pen <a href="http://codepen.io/marknelson/pen/KwJmjj/">SVG Sprite Animation</a> by Mark Nelson (<a href="http://codepen.io/marknelson">@marknelson</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+	</section>
+
+	<section class="slide">
+		<p data-height="308" data-theme-id="0" data-slug-hash="YqNqXa" data-default-tab="result" data-user="poorvanj" data-embed-version="2" data-pen-title="SVG Path Animation" class="codepen">See the Pen <a href="http://codepen.io/poorvanj/pen/YqNqXa/">SVG Path Animation</a> by Poorva Janbandhu (<a href="http://codepen.io/poorvanj">@poorvanj</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+	</section>
+
+	<section class="slide">
+		<p data-height="328" data-theme-id="0" data-slug-hash="Alayb" data-default-tab="result" data-user="kyleHenwood" data-embed-version="2" data-pen-title="SVG CSS3 Menu / Burger Button" class="codepen">See the Pen <a href="http://codepen.io/kyleHenwood/pen/Alayb/">SVG CSS3 Menu / Burger Button</a> by Kyle Henwood (<a href="http://codepen.io/kyleHenwood">@kyleHenwood</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+	</section>
+
+	<section class="slide">
+		<p data-height="422" data-theme-id="0" data-slug-hash="KVdQqm" data-default-tab="result" data-user="iamjoshellis" data-embed-version="2" data-pen-title="SVG Animated Drum Kit (Play Me!) 🥁" class="codepen">See the Pen <a href="http://codepen.io/iamjoshellis/pen/KVdQqm/">SVG Animated Drum Kit (Play Me!) 🥁</a> by Josh (<a href="http://codepen.io/iamjoshellis">@iamjoshellis</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+	</section>
+
+	<section class="slide">
+		<p data-height="473" data-theme-id="0" data-slug-hash="ByxQjL" data-default-tab="result" data-user="noeldelgado" data-embed-version="2" data-pen-title="X-ray me (SVG Experiment)" class="codepen">See the Pen <a href="http://codepen.io/noeldelgado/pen/ByxQjL/">X-ray me (SVG Experiment)</a> by Noel Delgado (<a href="http://codepen.io/noeldelgado">@noeldelgado</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+	</section>
+
+	<section class="slide">
+		<p data-height="466" data-theme-id="0" data-slug-hash="dPqRmP" data-default-tab="result" data-user="sdras" data-embed-version="2" data-pen-title="When you're an introvert..." class="codepen">See the Pen <a href="http://codepen.io/sdras/pen/dPqRmP/">When you're an introvert...</a> by Sarah Drasner (<a href="http://codepen.io/sdras">@sdras</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+	</section>
+
+	<section class="slide">
+		<h2>What else about SVG?</h2>
+		<ul>
+			<li>
+				Some libs: <br/>
+				<a href="http://snapsvg.io/" target="_blank" rel="noopener">snapsvg</a>,
+				<a href="http://velocityjs.org/#svg" target="_blank" rel="noopener">velocity js</a>,
+				<a href="http://svgjs.com/" target="_blank" rel="noopener">svg js</a>,
+				<a href="https://d3js.org/" target="_blank" rel="noopener">d3 js</a>
+			</li>
+			<li>
+				Graphs: <a href="https://css-tricks.com/how-to-make-charts-with-svg/" target="_blank" rel="noopener">css-tricks</a>
+			</li>
+			<li>
+				Games
+			</li>
+			<li>
+				...
+			</li>
+		</ul><div class="cover-images">
+		<svg class="cover-image">
+			<use xlink:href="./assets/common.svg#nerd-girl" />
+		</svg>
+	</div>
+	</section>
+
+	<section class="slide">
+		<h2>Links</h2>
+		<ul class="double">
+			<li>
+				<a href="https://thenounproject.com/" target="_blank" rel="noopener">SVGs for any case</a>
+			</li>
+			<li>
+				<a href="https://css-tricks.com/accessible-svgs/" target="_blank" rel="noopener">Accessible SVG</a>
+			</li>
+			<li>
+				<a href="https://jakearchibald.github.io/svgomg/" target="_blank" rel="noopener">Optimize your SVG</a>
+			</li>
+			<li>
+				<a href="https://css-tricks.com/lodge/svg/" target="_blank" rel="noopener">css-tricks</a>
+			</li>
+			<li>
+				<a href="https://css-tricks.com/currentcolor/" target="_blank" rel="noopener">currentColor</a>
+			</li>
+			<li>
+				<a href="https://www.youtube.com/watch?v=2an6-WVPuJU" target="_blank" rel="noopener">Lea Verou: CSS Variables</a>
+			</li>
+			<li>
+				<a href="https://www.youtube.com/watch?v=9xXBYcWgCHA" target="_blank" rel="noopener">Seren Davies: Death to icon fonts</a>
+			</li>
+			<li>
+				<a href="https://speakerdeck.com/chriscoyier/the-wonderful-world-of-svg" target="_blank" rel="noopener">Chris Coyier: The wonderful world of svg</a>
+			</li>
+			<li>
+				<a href="https://css-tricks.com/mega-list-svg-information/" target="_blank" rel="noopener">Css tricks: mega list svg</a>
+			</li>
+			<li>
+				<a href="https://sarasoueidan.com/blog/svg-coordinate-systems/" target="_blank" rel="noopener">Understanding SVG Coordinate Systems and Transformations</a>
+			</li>
+			<li>
+				<a href="https://css-tricks.com/a-guide-on-svg-support-in-email/" target="_blank" rel="noopener">SVG in emails</a>
+			</li>
+		</ul>
+	</section>
+
+	<section class="slide cover-slide">
+		<h2>Questions?</h2>
+
+		<div class="cover-images">
+			<svg class="cover-image">
+				<use xlink:href="./assets/index.svg#candy" />
+			</svg>
+			<svg class="cover-image">
+				<use xlink:href="./assets/index.svg#carrot" />
+			</svg>
+			<svg class="cover-image">
+				<use xlink:href="./assets/index.svg#grape" />
+			</svg>
+			<svg class="cover-image">
+				<use xlink:href="./assets/index.svg#candy2" />
+			</svg>
+			<svg class="cover-image">
+				<use xlink:href="./assets/index.svg#icecream" />
+			</svg>
+			<svg class="cover-image">
+				<use xlink:href="./assets/index.svg#martini" />
+			</svg>
+		</div>
+	</section>
+
+	<footer class="badge">
+		<a href="https://github.com/korosteleva/svg-demo">Github</a>
+	</footer>
+
+	<div class="progress"></div>
+
+	<script src="./assets/shower.min.js"></script>
+	<!-- Copyright © 2017 Yours Truly, Famous Inc. -->
+	<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+	<!-- Yandex.Metrika counter -->
+	<script type="text/javascript">
+		(function (d, w, c) {
+			(w[c] = w[c] || []).push(function() {
+				try {
+					w.yaCounter44242239 = new Ya.Metrika({
+						id:44242239,
+						clickmap:true,
+						trackLinks:true,
+						accurateTrackBounce:true
+					});
+				} catch(e) { }
+			});
+
+			var n = d.getElementsByTagName("script")[0],
+					s = d.createElement("script"),
+					f = function () { n.parentNode.insertBefore(s, n); };
+			s.type = "text/javascript";
+			s.async = true;
+			s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+			if (w.opera == "[object Opera]") {
+				d.addEventListener("DOMContentLoaded", f, false);
+			} else { f(); }
+		})(document, window, "yandex_metrika_callbacks");
+	</script>
+	<noscript><div><img src="https://mc.yandex.ru/watch/44242239" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+	<!-- /Yandex.Metrika counter -->
+</body>
+</html>
